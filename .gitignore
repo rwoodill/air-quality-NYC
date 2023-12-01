@@ -1,2 +1,5 @@
 #node modules
 node_modules
+
+#api key and email
+config.js

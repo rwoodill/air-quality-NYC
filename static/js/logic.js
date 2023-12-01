@@ -50,6 +50,9 @@ const trafficVolumeURL =
 
 const traffic = "https://data.cityofnewyork.us/resource/7ym2-wayt.json";
 
+//-------------------------------------------------------------------------------------------------
+// declare myMap globally so all functions can access
+//-------------------------------------------------------------------------------------------------
 let myMap;
 //-------------------------------------------------------------------------------------------------
 // function to initialize the map, contains function that adds data to the map
@@ -294,7 +297,7 @@ function download(content, fileName, contentType) {
 }
 
 //-------------------------------------------------------------------------------------------------
-// function to change the dropdown menu / handle the events
+// function to change the dropdown menu from index.html / handle the events
 //-------------------------------------------------------------------------------------------------
 function optionChanged(selectedOption){
     if (selectedOption === "option1"){
@@ -316,8 +319,3 @@ function optionChanged(selectedOption){
         d3.select("#example").style("display", "block");
     }
 }
-
-//-------------------------------------------------------------------------------------------------
-// call the initializeMap function to create the map
-//-------------------------------------------------------------------------------------------------
-

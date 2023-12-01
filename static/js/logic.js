@@ -8,13 +8,19 @@ const API_KEY="goldcat18"
 const EMAIL="rachelwoodill0526@gmail.com"
 
 //using
-const treeURL = "https://data.cityofnewyork.us/resource/uvpi-gqnh.json";
+const treeURL_2015 = "https://data.cityofnewyork.us/resource/uvpi-gqnh.json";
+
+//using
+const treeURL_2005 = "https://data.cityofnewyork.us/resource/29bw-z7pj.json";
   
 //using
 const boroughColoursURL = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/15-Mapping-Web/nyc.geojson";
 
 //using
 const airQualityBaseURL = "https://aqs.epa.gov/data/api/quarterlyData/byState?param=45201&state=36";
+
+//testing
+const truckRoutesURL = "https://data.cityofnewyork.us/resource/jjja-shxy.geojson";
 
 // not currently using
 const aqURL = "https://data.cityofnewyork.us/resource/c3uy-2p5r.geojson";
@@ -113,8 +119,8 @@ d3.json(boroughColoursURL).then(data => {
     myLayerControl.addOverlay(boroughColourMap, "Boroughs");
 });
 
-// Circle markers where trees are located in NY
-d3.json(treeURL).then(data => {
+// Circle markers where trees are located in NY in 2005
+d3.json(treeURL_2005).then(data => {
     //console.log(data);
     // empty list to hold the data
     let treeData = [];
@@ -138,9 +144,64 @@ d3.json(treeURL).then(data => {
     // create a layer group using the treeData list
     let treeMap = L.layerGroup(treeData);
     // add the "Trees" information to the overlay map
-    overlayMaps = Object.assign({"Trees": treeMap});
+    overlayMaps = Object.assign({"Trees-2005": treeMap});
     // add the "Trees" information to the control overlay
-    myLayerControl.addOverlay(treeMap, "Trees");
+    myLayerControl.addOverlay(treeMap, "Trees-2005");
+});
+
+// Circle markers where trees are located in NY in 2015
+d3.json(treeURL_2015).then(data => {
+    //console.log(data);
+    // empty list to hold the data
+    let treeData = [];
+    // loop through the data and add the coordinates to the empty list
+    for (let i = 0; i < data.length; i++){
+        treeData.push (
+            // create a circle marker based on [lat, lon]
+            L.circle([data[i].latitude, data[i].longitude], {
+                color: "green",
+                fillColor: "darkgreen",
+                fillOpacity: 0.9
+            })
+            // add a popup displaying information about the tree
+            .bindPopup(`<h2>Borough: ${data[i].boroname}</h2>
+                        <h2>Status: ${data[i].status}</h2>
+                        <h3>Address: ${data[i].address}</h3>
+                        <hr>
+                        </p>Lat: ${data[i].latitude}, Lon: ${data[i].longitude}</p>`)
+        )
+    }
+    // create a layer group using the treeData list
+    let treeMap = L.layerGroup(treeData);
+    // add the "Trees" information to the overlay map
+    overlayMaps = Object.assign({"Trees-2015": treeMap});
+    // add the "Trees" information to the control overlay
+    myLayerControl.addOverlay(treeMap, "Trees-2015");
+});
+
+// Testing truck routes data
+d3.json(truckRoutesURL).then(data => {
+    //console.log(data);
+    let truckRouteMap = L.geoJson(data, {
+        style: function(feature) {
+            return {
+                color: "blue",
+                fillColor: "blue",
+                fillOpacity: 0.7
+            };
+        },
+        onEachFeature: function(feature, layer){
+            layer.bindPopup(`<h3>Street: ${feature.properties.street}</h3><hr><p>Distance: ${feature.properties.shape_leng}</p>`)
+            //console.log(feature);
+        }
+    })
+
+    //add the "Truck Routes" information to the overlay map
+    overlayMaps = Object.assign({"Truck Routes": truckRouteMap});
+
+    // add the "Truck Routes" information to the control overlay
+    myLayerControl.addOverlay(truckRouteMap, "Truck Routes");
+
 });
 
 //-------------------------------------------------------------------------------------------------
@@ -148,7 +209,7 @@ d3.json(treeURL).then(data => {
 // returns the queryURL for air quality API
 //-------------------------------------------------------------------------------------------------
 function buildAQURL(beginDate, endDate, apiKey, email){
-    return queryUrl = `${airQualityBaseURL}&bdate=${beginDate}&edate=${endDate}&email=${email}&key=${apiKey}`
+    return queryUrl = `${airQualityBaseURL}&bdate=${beginDate}&edate=${endDate}&email=${email}&key=${apiKey}`  
 }
 
 //-------------------------------------------------------------------------------------------------
@@ -156,14 +217,18 @@ function buildAQURL(beginDate, endDate, apiKey, email){
 // uses the "download" function to create the .json file
 //-------------------------------------------------------------------------------------------------
 function createGeoJsonDataAQ (){
-    d3.json(buildAQURL("20140101", "20141231", API_KEY, EMAIL)).then(year2014 => {
-        //download(jsonData, 'year2014AQ_data.json', 'application/json');
-    })   
+    let queryURL = buildAQURL("20050101", "20051231", API_KEY, EMAIL);
+    d3.json(queryURL).then(data => {
+        
+        let jsonData = JSON.stringify(data)
+        
+        //download(jsonData, 'year2005AQ_data.json', 'application/json');
+    })    
 }
 
 // call the function createGeoJsonDataAQ to execute the function (builds the geojson data)
 // commented out when not creating data
-//createGeoJsonDataAQ();
+createGeoJsonDataAQ();
 
 //-------------------------------------------------------------------------------------------------
 // function to choose the colour of the borough in NY

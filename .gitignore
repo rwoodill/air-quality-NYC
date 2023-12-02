@@ -2,4 +2,7 @@
 node_modules
 
 #api key and email
-config.js
+config.cjs
+config.py
+
+__pycache__

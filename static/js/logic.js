@@ -1,18 +1,3 @@
-// import {API_KEY, EMAIL, CONNECTION_STRING } from "./config.js";
-
-// import { MongoClient } from './mongodb';
-
-// const url = CONNECTION_STRING;
-
-// MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
-
-//     if (err) throw err;
-
-//     console.log(client.topology.clientInfo);
-
-//     client.close();
-// });
-
 //-------------------------------------------------------------------------------------------------
 // Declare constants for the purpose of passing them to d3.json()
 //-------------------------------------------------------------------------------------------------
@@ -238,6 +223,9 @@ function initializeMap() {
       // add the "Truck Routes" information to the control overlay
       myLayerControl.addOverlay(truckRouteMap, "Truck Routes");
     });
+
+    //testing
+    
   }
   addDataToMap();
 }

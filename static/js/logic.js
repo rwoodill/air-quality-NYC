@@ -1,3 +1,15 @@
+// import { MongoClient } from 'mongodb';
+
+const MongoClient = require("mongodb");
+
+// import * as config from './config.js'
+
+// const DB_URI = config.CONNECTION_STRING;
+
+// const DB_NAME = "project_three_data";
+
+const client = new MongoClient(CONNECTION_STRING);
+
 //-------------------------------------------------------------------------------------------------
 // Declare constants for the purpose of passing them to d3.json()
 //-------------------------------------------------------------------------------------------------
@@ -39,6 +51,70 @@ const traffic = "https://data.cityofnewyork.us/resource/7ym2-wayt.json";
 // declare myMap globally so all functions can access
 //-------------------------------------------------------------------------------------------------
 let myMap;
+let nycData = [];
+
+async function run() {
+  await client.connect();
+  console.log("Connected successfully to server");
+  const db = client.db(DB_NAME);
+  const collection = db.collection("ny_air_quality_expanded");
+  const collections = await db.collections();
+
+  console.log("Collection List:");
+  collections.forEach(async (c) => {
+    const name = c.collectionName;
+
+    //console.log(name);
+  });
+
+  const allData = await collection.find({}).toArray();
+
+  // county codes for NYC:
+  // Bronx(The Bronx) = 005,
+  // Kings(Brooklyn) = 047,
+  // New York(Manhattan) = 061,
+  // Queens(Queens) = 081,
+  // Richmond(Staten Island) = 085
+  // Source for codes: https://unicede.air-worldwide.com/unicede/unicede_new-york_fips_3.html
+
+  allData.forEach(function (currVal, index, arr) {
+    //Bronx
+    if (currVal.features.properties.county_code == "005") {
+      // console.log(index, currVal.features.properties.county);
+      nycData.push(currVal);
+    }
+    // Kings
+    else if (currVal.features.properties.county_code == "047") {
+      // console.log(index, currVal.features.properties.county);
+      nycData.push(currVal);
+    }
+    // New York
+    else if (currVal.features.properties.county_code == "061") {
+      // console.log(index, currVal.features.properties.county);
+      nycData.push(currVal);
+    }
+    // Queens
+    else if (currVal.features.properties.county_code == "081") {
+      // console.log(index, currVal.features.properties.county);
+      nycData.push(currVal);
+    }
+    // Richmond
+    else if (currVal.features.properties.county_code == "085") {
+      // console.log(index, currVal.features.properties.county);
+      nycData.push(currVal);
+    }
+  });
+
+  //console.log(nycData);
+
+  return "done.";
+}
+
+run()
+  .then(console.log)
+  .catch(console.error)
+  .finally(() => client.close());
+
 //-------------------------------------------------------------------------------------------------
 // function to initialize the map, contains function that adds data to the map
 //-------------------------------------------------------------------------------------------------
@@ -79,9 +155,9 @@ function initializeMap() {
   let myLayerControl = L.control
     .layers(baseMaps, overlayMaps, { collapsed: false })
     .addTo(myMap);
-//-------------------------------------------------------------------------------------------------
-// function to add the data to the map using d3 calls
-//-------------------------------------------------------------------------------------------------
+  //-------------------------------------------------------------------------------------------------
+  // function to add the data to the map using d3 calls
+  //-------------------------------------------------------------------------------------------------
   function addDataToMap() {
     // Coloured boroughs for NY
     // from Unit 15-Mapping day 2 - 01-Evr_BasicNYCBoroughs
@@ -225,7 +301,6 @@ function initializeMap() {
     });
 
     //testing
-    
   }
   addDataToMap();
 }
@@ -287,23 +362,25 @@ function download(content, fileName, contentType) {
 //-------------------------------------------------------------------------------------------------
 // function to change the dropdown menu from index.html / handle the events
 //-------------------------------------------------------------------------------------------------
-function optionChanged(selectedOption){
-    if (selectedOption === "option1"){
-        if (!myMap){
-            initializeMap();
-        }
-        d3.select("#map").style("display", "block");
-        d3.select("#chart-container").style("display", "none");
-        d3.select("#example").style("display", "none");
+function optionChanged(selectedOption) {
+  if (selectedOption === "option1") {
+    if (!myMap) {
+      initializeMap();
     }
-    else if (selectedOption === 'option2'){
-        d3.select("#map").style("display", "none");
-        d3.select("#chart-container").style("display", "block");
-        d3.select("#example").style("display", "none");
-    }
-    else if (selectedOption === 'option3'){
-        d3.select("#map").style("display", "none");
-        d3.select("#chart-container").style("display", "none");
-        d3.select("#example").style("display", "block");
-    }
+    d3.select("#map").style("display", "block");
+    d3.select("#chart-container").style("display", "none");
+    d3.select("#example").style("display", "none");
+  } else if (selectedOption === "option2") {
+    d3.select("#map").style("display", "none");
+    d3.select("#chart-container").style("display", "block");
+    d3.select("#example").style("display", "none");
+  } else if (selectedOption === "option3") {
+    d3.select("#map").style("display", "none");
+    d3.select("#chart-container").style("display", "none");
+    d3.select("#example").style("display", "block");
+  }
 }
+
+// console.log(nycData);
+
+//module.exports = MongoClient;

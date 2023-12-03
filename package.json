@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "mongodb": "^6.3.0",
-    "requirejs": "^2.3.6"
-  },
-  "type": "module"
+    "requirejs": "^2.3.6",
+    "unpkg": "^0.2.0"
+  }
 }

@@ -12,7 +12,7 @@
 
 
 
-console.log("Testing (in logic.js)");
+//console.log("Testing (in logic.js)");
 //-------------------------------------------------------------------------------------------------
 // Declare constants for the purpose of passing them to d3.json()
 //-------------------------------------------------------------------------------------------------
@@ -66,15 +66,15 @@ function optionChanged(selectedOption) {
     }
     d3.select("#map").style("display", "block");
     d3.select("#chart-container").style("display", "none");
-    d3.select("#example").style("display", "none");
+    d3.select("#example-container").style("display", "none");
   } else if (selectedOption === "option2") {
     d3.select("#map").style("display", "none");
     d3.select("#chart-container").style("display", "block");
-    d3.select("#example").style("display", "none");
+    d3.select("#example-container").style("display", "none");
   } else if (selectedOption === "option3") {
     d3.select("#map").style("display", "none");
     d3.select("#chart-container").style("display", "none");
-    d3.select("#example").style("display", "block");
+    d3.select("#example-container").style("display", "block");
   }
 }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Air Quality in NYC</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -38,13 +38,14 @@
 
 
 <body>
-  <div class="row">
+  <div class="row d-flex justify-content-center">
     <div class="col-md-12 jumbotron text-center">
       <h1>Dashboard</h1>
       <p>Use the menu below to explore the dataset through visualizations</p>
     </div>
   </div>
-  <div class="well">
+  <div class="well col-md-12 text-center">
+
     <h5>Dropdown Menu:</h5>
 
     <select id="selDataset" onchange="optionChanged(this.value)">
@@ -53,12 +54,18 @@
       <option value="option2">Chart</option>
       <option value="option3">Example</option>
     </select>
-    <div id="map" style="width: 1200px; height: 700px; padding-left: 510px;"></div>
-    <div id="chart-container" style="display: none;">
+
+    <div class="mx-auto" id="map" style="display:none"></div>
+
+    <div class="text-center" id="chart-container" style="display: none;">
       <h5>Chart Text</h5>
-    <canvas id="example" width="400" height="400"></canvas>
-      <div id ="chart"></div>
+      <div id="chart-content"></div>
     </div>
+    <div class="text-center" id="example-container" style="display: none;">
+      <h5>Example Text Here</h5>
+      <div id="example-content"></div>
+    </div>
+
   </div>
 
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>

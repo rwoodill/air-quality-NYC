@@ -5,7 +5,7 @@ mimetypes.add_type('text/css', '.css')
 
 from flask import Flask, jsonify, render_template, request
 
-# import config
+import config
 from pymongo import MongoClient
 
 import pprint
@@ -18,24 +18,13 @@ app = Flask(__name__)
 #################################################
 # Mongo setup
 #################################################
-# client = MongoClient(config.CONNECTION_STRING)
-# db = client['project_three_data']
-# collection = db["ny_air_quality_expanded"]
-
-# nyc_data = []
-
-
+client = MongoClient(config.CONNECTION_STRING)
+db = client['project_three_data']
+collection = db["ny_air_quality_expanded"]
 
 #pprint.pprint(nyc_data) 
 
-
-# county codes for NYC: 
-# Bronx(The Bronx) = 005, 
-# Kings(Brooklyn) = 047, 
-# New York(Manhattan) = 061, 
-# Queens(Queens) = 081, 
-# Richmond(Staten Island) = 085
-# Source for codes: https://unicede.air-worldwide.com/unicede/unicede_new-york_fips_3.html
+data = []
 
 
 #################################################
@@ -58,14 +47,27 @@ def home_route():
 def about_route():
     return render_template("about.html")
 
-# @app.route('/get_aq_data', methods=['GET'])
-# def get_all_data():
-#     data = []
-#     for doc in collection.find({}):
-#         #print(doc["features"])
-#         data.append(doc["features"])
+# county codes for NYC: 
+# Bronx(The Bronx) = 005, 
+# Kings(Brooklyn) = 047, 
+# New York(Manhattan) = 061, 
+# Queens(Queens) = 081, 
+# Richmond(Staten Island) = 085
+# Source for codes: https://unicede.air-worldwide.com/unicede/unicede_new-york_fips_3.html
+
+@app.route('/get_aq_data', methods=['GET'])
+def get_all_data():
+
+    for doc in collection.find({}, {'_id': 0}):
+        if (doc["features"]["properties"]["county_code"] == "005" or
+            doc["features"]["properties"]["county_code"] == "047" or 
+            doc["features"]["properties"]["county_code"] == "061" or
+            doc["features"]["properties"]["county_code"] == "081" or
+            doc["features"]["properties"]["county_code"] == "085"):
+            #pprint.pprint(doc)
+            data.append(doc)#print(doc["features"])
    
-#     return jsonify(data)
+    return jsonify(data)
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -20,6 +20,9 @@ const airQualityBaseURL =
 const truckRoutesURL =
   "https://data.cityofnewyork.us/resource/jjja-shxy.geojson";
 
+//testing
+const mongoAQDataURL = "/api/get_aq_data" ; 
+
 // not currently using
 const aqURL = "https://data.cityofnewyork.us/resource/c3uy-2p5r.geojson";
 
@@ -250,8 +253,43 @@ function initializeMap() {
     });
 
     //testing
-  }
+  } //end of function addDataToMap
+
+  //-------------------------------------------------------------------------------------------------
+  // function to add the MongoDB data to the map using d3 calls
+  //-------------------------------------------------------------------------------------------------
+  function addMongoData() {
+    d3.json(mongoAQDataURL).then((data) => {
+      console.log(data);
+      // empty list to hold the data
+      let mongoAQData = [];
+      for (let i = 0; i < data.length; i++){
+      //   console.log(data[i].features.geometry.coordinates[0]);
+        mongoAQData.push(
+          // create a circle marker based on [lat, lon]
+          // add a popup displaying information about the tree
+          L.circle([data[i].features.geometry.coordinates[1], data[i].features.geometry.coordinates[0]], {
+            color: "red",
+            fillColor: "darkred",
+            fillOpacity: 0.9,
+          }).bindPopup(`<h2>Test</h2>
+                                <hr>
+                                </p>Lat: ${data[i].features.geometry.coordinates[1]}, Lon: ${data[i].features.geometry.coordinates[0]}</p>`)
+        );
+      }
+
+      // create a layer group using the treeData list
+      let aqMap = L.layerGroup(mongoAQData);
+      // add the "Trees" information to the overlay map
+      overlayMaps = Object.assign({ "Air Quality": aqMap });
+      // add the "Trees" information to the control overlay
+      myLayerControl.addOverlay(aqMap, "Air Quality");
+
+      
+    });
+  } //end of function addMongoData
   addDataToMap();
+  addMongoData();
 }
 
 //-------------------------------------------------------------------------------------------------
@@ -267,12 +305,12 @@ function buildAQURL(beginDate, endDate, apiKey, email) {
 // uses the "download" function to create the .json file
 //-------------------------------------------------------------------------------------------------
 function createGeoJsonDataAQ() {
-  let queryURL = buildAQURL("20050101", "20051231", API_KEY, EMAIL);
+  //let queryURL = buildAQURL("20050101", "20051231", API_KEY, EMAIL);
 
-  d3.json(queryURL).then((data) => {
+  d3.json(mongoAQDataURL).then((data) => {
     let jsonData = JSON.stringify(data);
 
-    //download(jsonData, 'year2005AQ_data.json', 'application/json');
+    download(jsonData, 'all_aq_data.json', 'application/json');
   });
 }
 

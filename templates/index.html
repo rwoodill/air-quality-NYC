@@ -1,101 +1,53 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Project Three</title>
-    <!-- <script type="importmap">
-      {
-        "imports": {
-          "mongodb-total": "https://unpkg.com/mongodb@5.6.0",
-          "mongodb-connection-string-url": "https://unpkg.com/mongodb-connection-string-url@3.0.0/"
-        }
-      }
-    </script> -->
-    <!-- <script>var exports = {};</script>
-    <script>var imports = {};</script>
-    <script>window.require = () => {}</script> -->
+<html lang="en">
 
-    <script type="module" src="static/js/config.js"></script>
-    
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Three</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="static/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.1/MarkerCluster.css" />
+  <!-- <script src="https://cdnjs.com/libraries/Chart.js"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.1/MarkerCluster.Default.css" />
+  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+  <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
+</head>
 
-    <!-- Leaflet JavaScript code -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
 
-    <!-- D3 library -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-
-    <!-- leaflet-choropleth JavaScript -->
-    <script type="text/javascript" src="static/js/choropleth.js"></script>
-
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-    <!-- Our CSS -->
-    <link rel="stylesheet" type="text/css" href="static/css/style.css">
-  </head>
-  <body>
-    
-
+<body>
+  <div class="row">
     <div class="col-md-12 jumbotron text-center">
-      <h1>Air Quality in New York City</h1>
-      <p>Explore the dataset through the dropdown menu</p>
-    <div class="container-fluid text-center">
-      <h5>Dropdown Menu:</h5>
-      <!-- dropdown selections-->
-      <select class="selDataset" id="selDataset" onchange="optionChanged(this.value)">
-        <option value="">Select an option</option>
-        <option value="option1">Map</option>
-        <option value="option2">Charts</option>
-        <option value="option3">Example</option>
-      </select>
-    </div>  
-     
+      <h1>Dashboard</h1>
+      <p>Use the menu below to explore the dataset through visualizations</p>
     </div>
-    <div class="padding" id="map-container">
-      <div class="container">
-        <div class="row">
-            <!-- map div -->
-            <!--style="width: 1200px; height: 700px;"-->
-            <div class="col-md-12 position-relative">
-              <div id="map" style="display: none;"></div>
-            </div>
-            <!-- chart div -->
-            <div class="col-md-12 position-relative">
-              <div class="text-align:center" id="chart-container" style="display: none;">
-                <h5>Chart Title Here</h5> 
-                <div id ="chart"></div>
-              </div>
-            </div>
-            <!-- example div -->
-            <div class="col-md-12 position-relative">
-              <div class="text-align:center" id="example" style="display: none;">
-                <h5>Example Text Here</h5>
-                <div id="example-content"></div>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-    
+  </div>
+  <div class="well">
+    <h5>Dropdown Menu:</h5>
 
-    
-    <!-- JavaScript files -->
-    <!--<script src="static/data/geojson2005.json"></script>-->
-    <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
- 
-    <!-- <script type="module" src="https://unpkg.com/mongodb@5.6.0/lib/index.js"></script>         -->
-    <!-- <script src="static/js/config.js"></script> -->
-    <!--<script type="module" src="static/js/connection.js"></script>-->
-    
-    <script type="module" src="static/js/logic.js"></script>
-    <!-- <script src="static/js/require.js" ></script> -->
-    
-  </body>
+    <select id="selDataset" onchange="optionChanged(this.value)">
+      <option value="" disabled selected>Select an option</option>
+      <option value="option1">Map</option>
+      <option value="option2">Chart</option>
+      <option value="option3">Example</option>
+    </select>
+    <div id="map" style="width: 1200px; height: 700px; padding-left: 510px;"></div>
+    <div id="chart-container" style="display: none;">
+      <h5>Chart Text</h5>
+    <canvas id="example" width="400" height="400"></canvas>
+      <div id ="chart"></div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.1/leaflet.markercluster.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.7.0/fabric.min.js"></script> -->
+  <!-- <script src="https://cdnjs.com/libraries/Chart.js"></script> -->
+  <!-- <script src="sweetalert2.min.js"></script> -->
+  <script src="static/js/logic.js"></script>
+
+
+</body>
+
 </html>

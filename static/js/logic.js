@@ -1,6 +1,6 @@
-// import { MongoClient } from 'mongodb';
-
-const MongoClient = require("mongodb");
+// import {MongoClient} from 'mongodb-total';
+//import * as mon from 'mongodb';
+// const MongoClient = require("mongodb");
 
 // import * as config from './config.js'
 
@@ -8,8 +8,11 @@ const MongoClient = require("mongodb");
 
 // const DB_NAME = "project_three_data";
 
-const client = new MongoClient(CONNECTION_STRING);
+// const client = new MongoClient(DB_URI);
 
+
+
+console.log("Testing (in logic.js)");
 //-------------------------------------------------------------------------------------------------
 // Declare constants for the purpose of passing them to d3.json()
 //-------------------------------------------------------------------------------------------------
@@ -52,6 +55,29 @@ const traffic = "https://data.cityofnewyork.us/resource/7ym2-wayt.json";
 //-------------------------------------------------------------------------------------------------
 let myMap;
 let nycData = [];
+
+//-------------------------------------------------------------------------------------------------
+// function to change the dropdown menu from index.html / handle the events
+//-------------------------------------------------------------------------------------------------
+function optionChanged(selectedOption) {
+  if (selectedOption === "option1") {
+    if (!myMap) {
+      initializeMap();
+    }
+    d3.select("#map").style("display", "block");
+    d3.select("#chart-container").style("display", "none");
+    d3.select("#example").style("display", "none");
+  } else if (selectedOption === "option2") {
+    d3.select("#map").style("display", "none");
+    d3.select("#chart-container").style("display", "block");
+    d3.select("#example").style("display", "none");
+  } else if (selectedOption === "option3") {
+    d3.select("#map").style("display", "none");
+    d3.select("#chart-container").style("display", "none");
+    d3.select("#example").style("display", "block");
+  }
+}
+
 
 async function run() {
   await client.connect();
@@ -110,10 +136,10 @@ async function run() {
   return "done.";
 }
 
-run()
-  .then(console.log)
-  .catch(console.error)
-  .finally(() => client.close());
+// run()
+//   .then(console.log)
+//   .catch(console.error)
+//   .finally(() => client.close());
 
 //-------------------------------------------------------------------------------------------------
 // function to initialize the map, contains function that adds data to the map
@@ -359,28 +385,8 @@ function download(content, fileName, contentType) {
   a.click();
 }
 
-//-------------------------------------------------------------------------------------------------
-// function to change the dropdown menu from index.html / handle the events
-//-------------------------------------------------------------------------------------------------
-function optionChanged(selectedOption) {
-  if (selectedOption === "option1") {
-    if (!myMap) {
-      initializeMap();
-    }
-    d3.select("#map").style("display", "block");
-    d3.select("#chart-container").style("display", "none");
-    d3.select("#example").style("display", "none");
-  } else if (selectedOption === "option2") {
-    d3.select("#map").style("display", "none");
-    d3.select("#chart-container").style("display", "block");
-    d3.select("#example").style("display", "none");
-  } else if (selectedOption === "option3") {
-    d3.select("#map").style("display", "none");
-    d3.select("#chart-container").style("display", "none");
-    d3.select("#example").style("display", "block");
-  }
-}
+
 
 // console.log(nycData);
 
-//module.exports = MongoClient;
+

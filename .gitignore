@@ -1,2 +1,10 @@
 #node modules
 node_modules
+
+#api key and email
+config.js
+config.py
+
+__pycache__
+
+.env

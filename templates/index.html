@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Three</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="static/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.1/MarkerCluster.css" />
+  <!-- <script src="https://cdnjs.com/libraries/Chart.js"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.1/MarkerCluster.Default.css" />
+  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+  <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col-md-12 jumbotron text-center">
+      <h1>Dashboard</h1>
+      <p>Use the menu below to explore the dataset through visualizations</p>
+    </div>
+  </div>
+  <div class="well">
+    <h5>Dropdown Menu:</h5>
+
+    <select id="selDataset" onchange="optionChanged(this.value)">
+      <option value="" disabled selected>Select an option</option>
+      <option value="option1">Map</option>
+      <option value="option2">Chart</option>
+      <option value="option3">Example</option>
+    </select>
+    <div id="map" style="width: 1200px; height: 700px; padding-left: 510px;"></div>
+    <div id="chart-container" style="display: none;">
+      <h5>Chart Text</h5>
+    <canvas id="example" width="400" height="400"></canvas>
+      <div id ="chart"></div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.1/leaflet.markercluster.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.7.0/fabric.min.js"></script> -->
+  <!-- <script src="https://cdnjs.com/libraries/Chart.js"></script> -->
+  <!-- <script src="sweetalert2.min.js"></script> -->
+  <script src="static/js/logic.js"></script>
+
+
+</body>
+
+</html>

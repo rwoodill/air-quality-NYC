@@ -5,7 +5,7 @@ mimetypes.add_type('text/css', '.css')
 
 from flask import Flask, jsonify, render_template, request
 
-# import config
+from config import *
 from pymongo import MongoClient
 
 import pprint
@@ -18,11 +18,11 @@ app = Flask(__name__)
 #################################################
 # Mongo setup
 #################################################
-# client = MongoClient(config.CONNECTION_STRING)
-# db = client['project_three_data']
-# collection = db["ny_air_quality_expanded"]
+client = MongoClient(CONNECTION_STRING)
+db = client['project_three_data']
+collection = db["ny_air_quality_expanded"]
 
-# nyc_data = []
+nyc_data = []
 
 
 

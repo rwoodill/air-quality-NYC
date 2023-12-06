@@ -12,3 +12,5 @@ __pycache__
 .env
 
 NewYorkCityTruckRoutes_20231205.geojson
+
+.ipynb_checkpoints

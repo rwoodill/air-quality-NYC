@@ -230,14 +230,14 @@ function initializeMap() {
     });
 
     // Testing truck routes data
-    d3.json(truckRoutesURL).then((data) => {
-      //console.log(data);
+    d3.json("static/data/truck_routes/NewYorkCityTruckRoutes_20231205.geojson").then((data) => {
+      console.log(data);
       let truckRouteMap = L.geoJson(data, {
         style: function (feature) {
           return {
             color: "blue",
             fillColor: "blue",
-            fillOpacity: 0.7,
+            fillOpacity: 0.6,
           };
         },
         onEachFeature: function (feature, layer) {
@@ -247,40 +247,9 @@ function initializeMap() {
           //console.log(feature);
         },
       });
-
-      // //add the "Truck Routes" information to the overlay map
-      // overlayMaps = Object.assign({ "Truck Routes": truckRouteMap });
-
-      // // add the "Truck Routes" information to the control overlay
-      // myLayerControl.addOverlay(truckRouteMap, "Truck Routes");
+      overlayMaps = Object.assign({ "Truck Routes": truckRouteMap });
+      myLayerControl.addOverlay(truckRouteMap, "Truck Routes");
     });
-
-    d3.json(nycTruckRoutesURL).then((data) => {
-      console.log(data)
-      let testing = L.geoJson(data, {
-        style: function (feature){
-          return {
-            color: "blue",
-            fillColor: "blue",
-            fillOpacity: 0.7,
-          };
-        },
-        onEachFeature: function (feature, layer) {
-          layer.bindPopup(
-            `<h3>Street: ${feature.street}</h3><hr><p>Distance: ${feature.shape_leng}</p>`
-          );
-          //console.log(feature);
-        },
-      })
-      //console.log(testing)
-      //add the "Truck Routes" information to the overlay map
-      overlayMaps = Object.assign({ "Truck Routes": testing });
-
-      // add the "Truck Routes" information to the control overlay
-      myLayerControl.addOverlay(testing, "Truck Routes");
-    })
-
-    //testing
   } //end of function addDataToMap
 
   //-------------------------------------------------------------------------------------------------

@@ -10,15 +10,16 @@ body {
 }
 
 #map {
-  position: relative;
   border: 1px solid black;
   border-radius: 8px;
-  height: 500px;  /* or as desired */
-  width: 75%;  /* This means "100% of the width of its container", the .col-md-8 */
+  height: 500px;  
+  width: 75%;  
+  padding-top: 100px;
+  margin-top: 10px;
 }
 
 #map-container {
-  
+  padding-top: 120px;
   padding-left: 10px;
   padding-bottom: 120px;
 }
@@ -27,18 +28,20 @@ body {
   padding-top: 70px;
   padding-bottom: 70px;
 }
-.navbar {
+
+.jumbotron {
+  margin-top: 100px;
+}
+
+/* #navbar {
   padding-top: 15px;
   padding-bottom: 15px;
   border: 0;
   border-radius: 0;
-  margin-bottom: 0;
+  margin-bottom: 100;
   font-size: 12px;
   letter-spacing: 5px;
-}
-.navbar-nav  li a:hover {
-  color: #1abc9c !important;
-}
+} */
 
 .leaflet-popup-content {
   text-align: center;

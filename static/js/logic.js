@@ -1,18 +1,3 @@
-// import {MongoClient} from 'mongodb-total';
-//import * as mon from 'mongodb';
-// const MongoClient = require("mongodb");
-
-// import * as config from './config.js'
-
-// const DB_URI = config.CONNECTION_STRING;
-
-// const DB_NAME = "project_three_data";
-
-// const client = new MongoClient(DB_URI);
-
-
-
-//console.log("Testing (in logic.js)");
 //-------------------------------------------------------------------------------------------------
 // Declare constants for the purpose of passing them to d3.json()
 //-------------------------------------------------------------------------------------------------
@@ -34,6 +19,9 @@ const airQualityBaseURL =
 //testing
 const truckRoutesURL =
   "https://data.cityofnewyork.us/resource/jjja-shxy.geojson";
+
+//testing
+const mongoAQDataURL = "/api/get_aq_data" ; 
 
 // not currently using
 const aqURL = "https://data.cityofnewyork.us/resource/c3uy-2p5r.geojson";
@@ -78,68 +66,6 @@ function optionChanged(selectedOption) {
   }
 }
 
-
-async function run() {
-  await client.connect();
-  console.log("Connected successfully to server");
-  const db = client.db(DB_NAME);
-  const collection = db.collection("ny_air_quality_expanded");
-  const collections = await db.collections();
-
-  console.log("Collection List:");
-  collections.forEach(async (c) => {
-    const name = c.collectionName;
-
-    //console.log(name);
-  });
-
-  const allData = await collection.find({}).toArray();
-
-  // county codes for NYC:
-  // Bronx(The Bronx) = 005,
-  // Kings(Brooklyn) = 047,
-  // New York(Manhattan) = 061,
-  // Queens(Queens) = 081,
-  // Richmond(Staten Island) = 085
-  // Source for codes: https://unicede.air-worldwide.com/unicede/unicede_new-york_fips_3.html
-
-  allData.forEach(function (currVal, index, arr) {
-    //Bronx
-    if (currVal.features.properties.county_code == "005") {
-      // console.log(index, currVal.features.properties.county);
-      nycData.push(currVal);
-    }
-    // Kings
-    else if (currVal.features.properties.county_code == "047") {
-      // console.log(index, currVal.features.properties.county);
-      nycData.push(currVal);
-    }
-    // New York
-    else if (currVal.features.properties.county_code == "061") {
-      // console.log(index, currVal.features.properties.county);
-      nycData.push(currVal);
-    }
-    // Queens
-    else if (currVal.features.properties.county_code == "081") {
-      // console.log(index, currVal.features.properties.county);
-      nycData.push(currVal);
-    }
-    // Richmond
-    else if (currVal.features.properties.county_code == "085") {
-      // console.log(index, currVal.features.properties.county);
-      nycData.push(currVal);
-    }
-  });
-
-  //console.log(nycData);
-
-  return "done.";
-}
-
-// run()
-//   .then(console.log)
-//   .catch(console.error)
-//   .finally(() => client.close());
 
 //-------------------------------------------------------------------------------------------------
 // function to initialize the map, contains function that adds data to the map
@@ -327,8 +253,43 @@ function initializeMap() {
     });
 
     //testing
-  }
+  } //end of function addDataToMap
+
+  //-------------------------------------------------------------------------------------------------
+  // function to add the MongoDB data to the map using d3 calls
+  //-------------------------------------------------------------------------------------------------
+  function addMongoData() {
+    d3.json(mongoAQDataURL).then((data) => {
+      console.log(data);
+      // empty list to hold the data
+      let mongoAQData = [];
+      for (let i = 0; i < data.length; i++){
+      //   console.log(data[i].features.geometry.coordinates[0]);
+        mongoAQData.push(
+          // create a circle marker based on [lat, lon]
+          // add a popup displaying information about the tree
+          L.circle([data[i].features.geometry.coordinates[1], data[i].features.geometry.coordinates[0]], {
+            color: "red",
+            fillColor: "darkred",
+            fillOpacity: 0.9,
+          }).bindPopup(`<h2>Test</h2>
+                                <hr>
+                                </p>Lat: ${data[i].features.geometry.coordinates[1]}, Lon: ${data[i].features.geometry.coordinates[0]}</p>`)
+        );
+      }
+
+      // create a layer group using the treeData list
+      let aqMap = L.layerGroup(mongoAQData);
+      // add the "Trees" information to the overlay map
+      overlayMaps = Object.assign({ "Air Quality": aqMap });
+      // add the "Trees" information to the control overlay
+      myLayerControl.addOverlay(aqMap, "Air Quality");
+
+      
+    });
+  } //end of function addMongoData
   addDataToMap();
+  addMongoData();
 }
 
 //-------------------------------------------------------------------------------------------------
@@ -344,12 +305,12 @@ function buildAQURL(beginDate, endDate, apiKey, email) {
 // uses the "download" function to create the .json file
 //-------------------------------------------------------------------------------------------------
 function createGeoJsonDataAQ() {
-  let queryURL = buildAQURL("20050101", "20051231", API_KEY, EMAIL);
+  //let queryURL = buildAQURL("20050101", "20051231", API_KEY, EMAIL);
 
-  d3.json(queryURL).then((data) => {
+  d3.json(mongoAQDataURL).then((data) => {
     let jsonData = JSON.stringify(data);
 
-    //download(jsonData, 'year2005AQ_data.json', 'application/json');
+    download(jsonData, 'all_aq_data.json', 'application/json');
   });
 }
 

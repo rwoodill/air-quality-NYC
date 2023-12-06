@@ -79,3 +79,11 @@ h1 {
   text-align: center;
 }
 
+/* CSS for columns on api doc page*/
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}

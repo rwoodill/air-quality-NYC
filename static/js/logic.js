@@ -16,6 +16,9 @@ const boroughColoursURL =
 const airQualityBaseURL =
   "https://aqs.epa.gov/data/api/quarterlyData/byState?param=45201&state=36";
 
+//test
+const nycTruckRoutesURL = "/api/get_truck_route_data"
+
 //testing
 const truckRoutesURL =
   "https://data.cityofnewyork.us/resource/jjja-shxy.geojson";
@@ -245,12 +248,37 @@ function initializeMap() {
         },
       });
 
+      // //add the "Truck Routes" information to the overlay map
+      // overlayMaps = Object.assign({ "Truck Routes": truckRouteMap });
+
+      // // add the "Truck Routes" information to the control overlay
+      // myLayerControl.addOverlay(truckRouteMap, "Truck Routes");
+    });
+
+    d3.json(nycTruckRoutesURL).then((data) => {
+      console.log(data)
+      let testing = L.geoJson(data, {
+        style: function (feature){
+          return {
+            color: "blue",
+            fillColor: "blue",
+            fillOpacity: 0.7,
+          };
+        },
+        onEachFeature: function (feature, layer) {
+          layer.bindPopup(
+            `<h3>Street: ${feature.street}</h3><hr><p>Distance: ${feature.shape_leng}</p>`
+          );
+          //console.log(feature);
+        },
+      })
+      //console.log(testing)
       //add the "Truck Routes" information to the overlay map
-      overlayMaps = Object.assign({ "Truck Routes": truckRouteMap });
+      overlayMaps = Object.assign({ "Truck Routes": testing });
 
       // add the "Truck Routes" information to the control overlay
-      myLayerControl.addOverlay(truckRouteMap, "Truck Routes");
-    });
+      myLayerControl.addOverlay(testing, "Truck Routes");
+    })
 
     //testing
   } //end of function addDataToMap
@@ -260,7 +288,7 @@ function initializeMap() {
   //-------------------------------------------------------------------------------------------------
   function addMongoData() {
     d3.json(mongoAQDataURL).then((data) => {
-      console.log(data);
+      //console.log(data);
       // empty list to hold the data
       let mongoAQData = [];
       for (let i = 0; i < data.length; i++){

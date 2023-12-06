@@ -4,6 +4,8 @@ node_modules
 #api key and email
 config.js
 config.py
+#tree raw data
+2015_Street_Tree_Census.csv
 
 __pycache__
 

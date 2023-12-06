@@ -47,6 +47,10 @@ def home_route():
 def about_route():
     return render_template("about.html")
 
+@app.route("/apidoc")
+def apidoc_route():
+    return render_template("API_DOC.html")
+
 # county codes for NYC: 
 # Bronx(The Bronx) = 005, 
 # Kings(Brooklyn) = 047, 

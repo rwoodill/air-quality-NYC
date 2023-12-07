@@ -51,6 +51,8 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <!-- chartjs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- custom css -->
     <link rel="stylesheet" type="text/css" href="static/css/style.css" />
   </head>
@@ -76,7 +78,8 @@
         <div class="mx-auto" id="map" style="display: none"></div>
       </div>
       <div class="text-center" id="chart-container" style="display: none">
-        <h5>Chart Text</h5>
+        <h5>Air Quality Chart</h5>
+        <canvas id="myChart"></canvas>
         <div id="chart-content"></div>
       </div>
       <div class="text-center" id="example-container" style="display: none">
@@ -92,5 +95,6 @@
     <!-- custom js -->
     <script src="static/js/config.js"></script>
     <script src="static/js/logic.js"></script>
+    <script src="static/js/logic_chart.js"></script>
   </body>
 </html>

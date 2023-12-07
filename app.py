@@ -24,7 +24,6 @@ collection = db["ny_air_quality_expanded"]
 
 #pprint.pprint(nyc_data) 
 
-data = []
 
 
 #################################################
@@ -61,7 +60,7 @@ def apidoc_route():
 
 @app.route('/api/get_aq_data', methods=['GET'])
 def get_all_data():
-
+    data = []
     for doc in collection.find({}, {'_id': 0}):
         if (doc["features"]["properties"]["county_code"] == "005" or
             doc["features"]["properties"]["county_code"] == "047" or 
@@ -72,6 +71,18 @@ def get_all_data():
             data.append(doc)
    
     return jsonify(data)
+#
+@app.route('/api/get_chart_data/<station_coordinates>')
+def get_chart_data(station_coordinates):
+    data_chart = []
+    lon = station_coordinates[0]
+    lat = station_coordinates[1]
+    query = {"features.geometry.coordinates.0":lon,"features.geometry.coordinates.1":lat}
+    for item in (collection.find(query, {'_id': 0}).sort()):
+        data_chart.append(item)
+    return data_chart
+    #return jsonify(data_chart)
+
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)

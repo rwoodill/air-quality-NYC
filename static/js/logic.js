@@ -260,7 +260,7 @@ function initializeMap() {
   //-------------------------------------------------------------------------------------------------
   function addMongoData() {
     d3.json(mongoAQDataURL).then((data) => {
-      console.log(data);
+      //console.log(data);
       // empty list to hold the data
       let mongoAQData = [];
       for (let i = 0; i < data.length; i++){

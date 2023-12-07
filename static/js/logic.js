@@ -16,6 +16,9 @@ const boroughColoursURL =
 const airQualityBaseURL =
   "https://aqs.epa.gov/data/api/quarterlyData/byState?param=45201&state=36";
 
+//test
+const nycTruckRoutesURL = "/api/get_truck_route_data"
+
 //testing
 const truckRoutesURL =
   "https://data.cityofnewyork.us/resource/jjja-shxy.geojson";
@@ -227,14 +230,14 @@ function initializeMap() {
     });
 
     // Testing truck routes data
-    d3.json(truckRoutesURL).then((data) => {
-      //console.log(data);
+    d3.json("static/data/truck_routes/NewYorkCityTruckRoutes_20231205.geojson").then((data) => {
+      console.log(data);
       let truckRouteMap = L.geoJson(data, {
         style: function (feature) {
           return {
             color: "blue",
             fillColor: "blue",
-            fillOpacity: 0.7,
+            fillOpacity: 0.6,
           };
         },
         onEachFeature: function (feature, layer) {
@@ -244,15 +247,9 @@ function initializeMap() {
           //console.log(feature);
         },
       });
-
-      //add the "Truck Routes" information to the overlay map
       overlayMaps = Object.assign({ "Truck Routes": truckRouteMap });
-
-      // add the "Truck Routes" information to the control overlay
       myLayerControl.addOverlay(truckRouteMap, "Truck Routes");
     });
-
-    //testing
   } //end of function addDataToMap
 
   //-------------------------------------------------------------------------------------------------

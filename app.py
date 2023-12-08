@@ -92,7 +92,7 @@ def get_all_truck_data():
 # asthma
 # ---------------------------------------------------------
 @app.route('/api/get_asthma_data', methods=['GET'])
-def get_all_asthma_data():
+def get_asthma_data():
     data = []
     collection = db["nyc_asthma_data"]
     query = {"$or": [{"time": 2005}, {"time":2015}]}

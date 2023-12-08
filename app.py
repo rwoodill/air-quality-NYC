@@ -96,27 +96,5 @@ def get_chart_data(station_coordinates):
     #return jsonify(data_chart)
 
 
-@app.route('/api/get_truck_route_data', methods=['GET'])
-def get_all_truck_data():
-    data = []
-    collection = db["nyc_truck_routes"]
-    for doc in collection.find({}, {'_id': 0}):
-        #pprint.pprint(doc)
-        data.append(doc)
-   
-    return jsonify(data)
-#
-@app.route('/api/get_chart_data/<station_coordinates>')
-def get_chart_data(station_coordinates):
-    data_chart = []
-    lon = station_coordinates[0]
-    lat = station_coordinates[1]
-    query = {"features.geometry.coordinates.0":lon,"features.geometry.coordinates.1":lat}
-    for item in (collection.find(query, {'_id': 0}).sort()):
-        data_chart.append(item)
-    return data_chart
-    #return jsonify(data_chart)
-
-
 if __name__ == "__main__":
     app.run(debug=False)

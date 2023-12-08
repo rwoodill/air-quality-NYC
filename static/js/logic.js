@@ -26,6 +26,9 @@ const truckRoutesURL =
 //testing
 const mongoAQDataURL = "/api/get_aq_data" ; 
 
+//testing
+const nycAsthmaDataURL = "/api/get_asthma_data";
+
 // not currently using
 const aqURL = "https://data.cityofnewyork.us/resource/c3uy-2p5r.geojson";
 
@@ -228,10 +231,10 @@ function initializeMap() {
       // add the "Trees" information to the control overlay
       myLayerControl.addOverlay(treeMap, "Trees-2015");
     });
-
+ 
     // Testing truck routes data
     d3.json("static/data/truck_routes/NewYorkCityTruckRoutes_20231205.geojson").then((data) => {
-      console.log(data);
+      //console.log(data);
       let truckRouteMap = L.geoJson(data, {
         style: function (feature) {
           return {
@@ -250,6 +253,7 @@ function initializeMap() {
       overlayMaps = Object.assign({ "Truck Routes": truckRouteMap });
       myLayerControl.addOverlay(truckRouteMap, "Truck Routes");
     });
+
   } //end of function addDataToMap
 
   //-------------------------------------------------------------------------------------------------
@@ -286,7 +290,7 @@ function initializeMap() {
     });
   } //end of function addMongoData
   addDataToMap();
-  addMongoData();
+  //addMongoData();
 }
 
 //-------------------------------------------------------------------------------------------------

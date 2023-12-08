@@ -7,7 +7,7 @@ from flask import Flask, jsonify, render_template, request
 
 import config
 from pymongo import MongoClient
-
+import pandas
 import pprint
 
 #################################################
@@ -84,16 +84,32 @@ def get_all_truck_data():
    
     return jsonify(data)
 #
-@app.route('/api/get_chart_data/<station_coordinates>')
-def get_chart_data(station_coordinates):
-    data_chart = []
-    lon = station_coordinates[0]
-    lat = station_coordinates[1]
-    query = {"features.geometry.coordinates.0":lon,"features.geometry.coordinates.1":lat}
-    for item in (collection.find(query, {'_id': 0}).sort()):
-        data_chart.append(item)
-    return data_chart
-    #return jsonify(data_chart)
+@app.route('/api/get_chart_data/chart',methods=['GET'])
+#'/api/get_chart_data/chart?geoid=1&chartid=asthma'
+#chart: asthma, fineparticles, nox
+def get_chart_data():
+    if (request.args.get('geoid')) and (request.args.get('chartid')):
+        geoid = request.args.get('geoid')
+        chartid = request.args.get('chartid')
+    else:
+        return ("Error: Input field error. Please check input")
+    file_path = ''
+    asthma_file = 'static/data/AQ_health_chart_data/asthma.csv'
+    fineparticles_file = 'static/data/AQ_health_chart_data/fp.csv'
+    nox_file = 'static/data/AQ_health_chart_data/nox.csv'
+    if chartid == 'asthma':
+        file_path = asthma_file
+    elif chartid == 'fineparticles':
+        file_path = fineparticles_file
+    elif chartid == 'nox':
+        file_path = nox_file
+    else:
+        return "chartid error"
+    df=pandas.read_csv(file_path)
+    df = df[['GeoID','Time','Value']]
+    df = df[df['GeoID']==int(geoid)]
+    return df.to_json()
+
 
 
 if __name__ == "__main__":

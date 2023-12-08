@@ -1,0 +1,85 @@
+GeoID,Geography,Time,Value,CI,Note,Indicator
+1,New York City,2022,5.763,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,New York City,2021,6.5387,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,New York City,2020,6.06,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,New York City,2019,6.6,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,New York City,2018,7,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,New York City,2017,7.38,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,New York City,2016,7.45,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,New York City,2015,8.5604,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,New York City,2014,8.93,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,New York City,2013,8.63,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,New York City,2012,8.95,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,New York City,2011,10.1,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,New York City,2010,9.54,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,New York City,2009,10.43,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,Bronx,2022,6.1017,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,Bronx,2021,6.6443,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,Bronx,2020,6.11,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,Bronx,2019,6.91,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,Bronx,2018,7.25,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,Bronx,2017,7.72,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,Bronx,2016,7.75,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,Bronx,2015,9.24,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,Bronx,2014,9.27,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,Bronx,2013,9.1,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,Bronx,2012,9.54,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,Bronx,2011,10.82,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,Bronx,2010,10.14,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+1,Bronx,2009,11.05,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+2,Brooklyn,2022,6.9644,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+2,Brooklyn,2021,6.6345,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+2,Brooklyn,2020,6.12,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+2,Brooklyn,2019,6.66,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+2,Brooklyn,2018,7.19,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+2,Brooklyn,2017,7.52,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+2,Brooklyn,2016,7.76,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+2,Brooklyn,2015,8.74,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+2,Brooklyn,2014,9.09,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+2,Brooklyn,2013,8.7,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+2,Brooklyn,2012,9.02,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+2,Brooklyn,2011,10.2,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+2,Brooklyn,2010,9.69,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+2,Brooklyn,2009,10.5,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+3,Manhattan,2022,5.8064,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+3,Manhattan,2021,7.407,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+3,Manhattan,2020,7.16,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+3,Manhattan,2019,8.31,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+3,Manhattan,2018,8.46,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+3,Manhattan,2017,8.72,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+3,Manhattan,2016,8.97,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+3,Manhattan,2015,10.19,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+3,Manhattan,2014,10.85,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+3,Manhattan,2013,10.73,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+3,Manhattan,2012,10.92,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+3,Manhattan,2011,11.94,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+3,Manhattan,2010,11.61,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+3,Manhattan,2009,12.63,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+4,Queens,2022,5.6953,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+4,Queens,2021,6.4779,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+4,Queens,2020,6.06,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+4,Queens,2019,6.47,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+4,Queens,2018,6.82,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+4,Queens,2017,7.19,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+4,Queens,2016,7.17,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+4,Queens,2015,8.35,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+4,Queens,2014,8.6,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+4,Queens,2013,8.36,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+4,Queens,2012,8.63,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+4,Queens,2011,9.75,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+4,Queens,2010,9.2,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+4,Queens,2009,10.05,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+5,Staten Island,2022,5.1788,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+5,Staten Island,2021,6.152,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+5,Staten Island,2020,5.54,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+5,Staten Island,2019,5.92,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+5,Staten Island,2018,6.4,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+5,Staten Island,2017,6.81,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+5,Staten Island,2016,6.84,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+5,Staten Island,2015,7.69,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+5,Staten Island,2014,8.41,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+5,Staten Island,2013,7.98,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+5,Staten Island,2012,8.35,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+5,Staten Island,2011,9.44,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+5,Staten Island,2010,8.8,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough
+5,Staten Island,2009,9.81,,,Fine particles (PM 2.5): Fine particles (PM 2.5) Mean (mcg/m3) by Borough

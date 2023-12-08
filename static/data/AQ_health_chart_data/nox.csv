@@ -1,0 +1,85 @@
+GeoID,Geography,Time,Value,CI,Note,Indicator
+1,New York City,2022,10.305,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,New York City,2021,11.3987,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,New York City,2020,10.91,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,New York City,2019,10.68,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,New York City,2018,11.72,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,New York City,2017,12.9,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,New York City,2016,15.58,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,New York City,2015,17.4521,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,New York City,2014,19.48,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,New York City,2013,16.68,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,New York City,2012,18.7,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,New York City,2011,23.16,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,New York City,2010,20.71,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,New York City,2009,23.21,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,Bronx,2022,10.8741,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,Bronx,2021,11.481,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,Bronx,2020,11.11,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,Bronx,2019,11.69,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,Bronx,2018,12.29,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,Bronx,2017,13.55,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,Bronx,2016,15.44,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,Bronx,2015,18.14,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,Bronx,2014,20.64,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,Bronx,2013,17.63,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,Bronx,2012,19.55,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,Bronx,2011,24.33,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,Bronx,2010,22.03,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+1,Bronx,2009,26.11,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+2,Brooklyn,2022,13.3441,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+2,Brooklyn,2021,12.7388,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+2,Brooklyn,2020,12.03,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+2,Brooklyn,2019,11.44,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+2,Brooklyn,2018,13.48,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+2,Brooklyn,2017,14.65,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+2,Brooklyn,2016,17.36,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+2,Brooklyn,2015,18.49,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+2,Brooklyn,2014,20.84,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+2,Brooklyn,2013,16.7,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+2,Brooklyn,2012,18.77,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+2,Brooklyn,2011,23.73,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+2,Brooklyn,2010,21.24,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+2,Brooklyn,2009,23.13,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+3,Manhattan,2022,11.3765,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+3,Manhattan,2021,12.9535,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+3,Manhattan,2020,13.84,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+3,Manhattan,2019,14.32,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+3,Manhattan,2018,19.61,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+3,Manhattan,2017,20.89,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+3,Manhattan,2016,23.59,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+3,Manhattan,2015,28.89,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+3,Manhattan,2014,35.06,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+3,Manhattan,2013,30.44,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+3,Manhattan,2012,33.97,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+3,Manhattan,2011,40.81,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+3,Manhattan,2010,37.44,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+3,Manhattan,2009,42.61,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+4,Queens,2022,10.2956,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+4,Queens,2021,11.5654,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+4,Queens,2020,11.27,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+4,Queens,2019,11.1,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+4,Queens,2018,11.06,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+4,Queens,2017,12.49,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+4,Queens,2016,15.71,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+4,Queens,2015,17.77,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+4,Queens,2014,19.01,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+4,Queens,2013,16.54,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+4,Queens,2012,18.36,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+4,Queens,2011,23.55,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+4,Queens,2010,21.05,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+4,Queens,2009,23.17,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+5,Staten Island,2022,7.6418,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+5,Staten Island,2021,9.0186,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+5,Staten Island,2020,7.79,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+5,Staten Island,2019,7.15,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+5,Staten Island,2018,7.57,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+5,Staten Island,2017,8.25,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+5,Staten Island,2016,10.47,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+5,Staten Island,2015,11.14,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+5,Staten Island,2014,12.33,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+5,Staten Island,2013,11.3,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+5,Staten Island,2012,13.17,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+5,Staten Island,2011,14.7,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+5,Staten Island,2010,12.65,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough
+5,Staten Island,2009,14.5,,,Nitric oxide (NOx): Nitric oxide (NOx) Mean (ppb) by Borough

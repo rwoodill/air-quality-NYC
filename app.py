@@ -106,9 +106,11 @@ def get_chart_data():
     else:
         return "chartid error"
     df=pandas.read_csv(file_path)
-    df = df[['GeoID','Time','Value']]
+    df = df[df['Geography']!='New York City']
+    df = df[['GeoID','Geography','Time','Value']]
     df = df[df['GeoID']==int(geoid)]
-    return df.to_json()
+
+    return df.to_json(orient='records', lines=False)
 
 
 

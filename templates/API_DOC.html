@@ -56,17 +56,41 @@
         <h1>API User Manual</h1>
       <div class="container-fluid text-center">
         <h5>APIs:</h5>
+        <hr>
         <div class="row">
           <div class="column">/</div>
           <div class="column">Home Page</div>
         </div>
+        <hr>
         <div class="row">
           <div class="column">/about</div>
           <div class="column">About Page</div>
         </div>
+        <hr>
         <div class="row">
           <div class="column">/api/get_aq_data</div>
           <div class="column">This api returns all air quality data for New York City</div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="column">/api/get_chart_data/chart</div>
+          <div class="column">
+            <p>Example:/api/get_chart_data/chart?geoid=1&chartid=asthma</p>
+            <p>Avaliable geoid and their location:</p>
+            <ul>
+              <li>1:Bronx</li>
+              <li>2:Brooklyn</li>
+              <li>3:Manhattan</li>
+              <li>4:Queens</li>
+              <li>5:Staten Island</li>
+            </ul>
+            <p>Avaliable chartid:</p>
+            <ul>
+              <li>asthma</li>
+              <li>fineparticles</li>
+              <li>nox</li>
+            </ul>
+          </div>
         </div>
         <hr>
         <p>Project by Maha Salman Cheema, Rachel Woodill, and Zhao Wen</p>

@@ -12,38 +12,35 @@ const treeURL_2005 = "https://data.cityofnewyork.us/resource/29bw-z7pj.json";
 const boroughColoursURL =
   "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/15-Mapping-Web/nyc.geojson";
 
-//using
-const airQualityBaseURL =
-  "https://aqs.epa.gov/data/api/quarterlyData/byState?param=45201&state=36";
 
-//test
-const nycTruckRoutesURL = "/api/get_truck_route_data"
 
-//testing
-const truckRoutesURL =
-  "https://data.cityofnewyork.us/resource/jjja-shxy.geojson";
-
-//testing
-const mongoAQDataURL = "/api/get_aq_data" ; 
-
-//testing
-const nycAsthmaDataURL = "/api/get_asthma_data";
 
 // not currently using
-const aqURL = "https://data.cityofnewyork.us/resource/c3uy-2p5r.geojson";
+// const aqURL = "https://data.cityofnewyork.us/resource/c3uy-2p5r.geojson";
 
-const aqJSON =
-  "https://data.cdc.gov/api/views/cjae-szjv/rows.json?accessType=DOWNLOAD";
+// const airQualityBaseURL =
+//   "https://aqs.epa.gov/data/api/quarterlyData/byState?param=45201&state=36";
 
-const geocodingBaseURL = "https://geocode.maps.co/search?q=";
+// const aqJSON =
+//   "https://data.cdc.gov/api/views/cjae-szjv/rows.json?accessType=DOWNLOAD";
 
-const airQualityURL = "https://data.cityofnewyork.us/resource/c3uy-2p5r.json";
+// const geocodingBaseURL = "https://geocode.maps.co/search?q=";
 
-const trafficVolumeURL =
-  "https://data.cityofnewyork.us/resource/btm5-ppia.json";
+// const airQualityURL = "https://data.cityofnewyork.us/resource/c3uy-2p5r.json";
 
-const traffic = "https://data.cityofnewyork.us/resource/7ym2-wayt.json";
+// const truckRoutesURL =
+//   "https://data.cityofnewyork.us/resource/jjja-shxy.geojson";
 
+// const trafficVolumeURL =
+//   "https://data.cityofnewyork.us/resource/btm5-ppia.json";
+
+// const traffic = "https://data.cityofnewyork.us/resource/7ym2-wayt.json";
+
+// const nycTruckRoutesURL = "/api/get_truck_route_data"
+
+// const mongoAQDataURL = "/api/get_aq_data" ; 
+
+// const nycAsthmaDataURL = "/api/get_asthma_data";
 //-------------------------------------------------------------------------------------------------
 // declare myMap globally so all functions can access
 //-------------------------------------------------------------------------------------------------
@@ -245,7 +242,7 @@ function initializeMap() {
         },
         onEachFeature: function (feature, layer) {
           layer.bindPopup(
-            `<h3>Street: ${feature.properties.street}</h3><hr><p>Distance: ${feature.properties.shape_leng}</p>`
+            `<h4>Street: ${feature.properties.street}</h4><hr><p>Distance: ${feature.properties.shape_leng}</p>`
           );
           //console.log(feature);
         },
@@ -256,39 +253,6 @@ function initializeMap() {
 
   } //end of function addDataToMap
 
-  //-------------------------------------------------------------------------------------------------
-  // function to add the MongoDB data to the map using d3 calls
-  //-------------------------------------------------------------------------------------------------
-  function addMongoData() {
-    d3.json(mongoAQDataURL).then((data) => {
-      //console.log(data);
-      // empty list to hold the data
-      let mongoAQData = [];
-      for (let i = 0; i < data.length; i++){
-      //   console.log(data[i].features.geometry.coordinates[0]);
-        mongoAQData.push(
-          // create a circle marker based on [lat, lon]
-          // add a popup displaying information about the tree
-          L.circle([data[i].features.geometry.coordinates[1], data[i].features.geometry.coordinates[0]], {
-            color: "red",
-            fillColor: "darkred",
-            fillOpacity: 0.9,
-          }).bindPopup(`<h2>Test</h2>
-                                <hr>
-                                </p>Lat: ${data[i].features.geometry.coordinates[1]}, Lon: ${data[i].features.geometry.coordinates[0]}</p>`)
-        );
-      }
-
-      // create a layer group using the treeData list
-      let aqMap = L.layerGroup(mongoAQData);
-      // add the "Trees" information to the overlay map
-      overlayMaps = Object.assign({ "Air Quality": aqMap });
-      // add the "Trees" information to the control overlay
-      myLayerControl.addOverlay(aqMap, "Air Quality");
-
-      
-    });
-  } //end of function addMongoData
   addDataToMap();
   //addMongoData();
 }

@@ -105,16 +105,6 @@ def get_asthma_data():
 # ---------------------------------------------------------
 # aq
 # ---------------------------------------------------------
-@app.route('/api/get_chart_data/<station_coordinates>')
-def get_chart_data(station_coordinates):
-    data_chart = []
-    lon = station_coordinates[0]
-    lat = station_coordinates[1]
-    query = {"features.geometry.coordinates.0":lon,"features.geometry.coordinates.1":lat}
-    for item in (collection.find(query, {'_id': 0}).sort()):
-        data_chart.append(item)
-    return data_chart
-    #return jsonify(data_chart)
 
 #
 @app.route('/api/get_chart_data/chart',methods=['GET'])

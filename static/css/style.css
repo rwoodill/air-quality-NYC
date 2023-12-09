@@ -33,15 +33,14 @@ body {
   margin-top: 100px;
 }
 
-/* #navbar {
+.navbar-brand {
   padding-top: 15px;
   padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   border: 0;
   border-radius: 0;
-  margin-bottom: 100;
-  font-size: 12px;
-  letter-spacing: 5px;
-} */
+}
 
 .leaflet-popup-content {
   text-align: center;

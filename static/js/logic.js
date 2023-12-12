@@ -45,7 +45,6 @@ const boroughColoursURL =
 // declare myMap globally so all functions can access
 //-------------------------------------------------------------------------------------------------
 let myMap;
-let nycData = [];
 
 //-------------------------------------------------------------------------------------------------
 // function to change the dropdown menu from index.html / handle the events
@@ -237,7 +236,7 @@ function initializeMap() {
           return {
             color: "blue",
             fillColor: "blue",
-            fillOpacity: 0.6,
+            fillOpacity: 0.5,
           };
         },
         onEachFeature: function (feature, layer) {

@@ -9,6 +9,10 @@ body {
   margin: 0;
 }
 
+ul {
+  list-style: none;
+}
+
 #map {
   border: 1px solid black;
   border-radius: 8px;

@@ -22,10 +22,6 @@ client = MongoClient(config.CONNECTION_STRING)
 db = client['project_three_data']
 collection = db["ny_air_quality_expanded"]
 
-#pprint.pprint(nyc_data) 
-
-
-
 
 #################################################
 # Flask Routes
@@ -51,6 +47,12 @@ def about_route():
 def apidoc_route():
     return render_template("API_DOC.html")
 
+# ---------------------------------------------------------
+# jupyter notebook
+# ---------------------------------------------------------
+@app.route('/jupyter_notebook_analysis', methods=['GET'])
+def get_notebook():
+    return render_template("data_analysis.html")
 # ---------------------------------------------------------
 # likely outdated
 # ---------------------------------------------------------

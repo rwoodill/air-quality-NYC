@@ -1,5 +1,5 @@
 //const { config } = require("module");
-console.log('test')
+// console.log('test')
 function generateChartdata(chartid){
     var chart_dataset = []
     var line_label = []
@@ -58,7 +58,7 @@ for (let j =1; j<4; j++){
 
     const ctx = document.getElementById(`myChart${j}`);
     var config = generateChartdata(chartid)
-    console.log(ctx, config)
+    // console.log(ctx, config)
     const asthmaChart = new Chart(ctx, config);
 }
 

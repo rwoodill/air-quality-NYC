@@ -57,49 +57,63 @@
       <div class="container-fluid text-center">
         <h5>APIs:</h5>
         <hr>
-        <div class="row">
-          <div class="column">/</div>
-          <div class="column">Home Page</div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="column">/about</div>
-          <div class="column">About Page</div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="column">/api/get_aq_data</div>
-          <div class="column">This api returns all air quality data for New York City</div>
-        </div>
-        <div class="row">
-          <div class="column">/api/get_asthma_data</div>
-          <div class="column">This api returns all the asthma data for New York City in 2005 and 2015</div>
-        </div>
-        <div class="row">
-          <div class="column">/api/get_truck_route_data</div>
-          <div class="column">This api returns all the truck route for New York City</div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="column">/api/get_chart_data/chart</div>
-          <div class="column">
-            <p>Example:/api/get_chart_data/chart?geoid=1&chartid=asthma</p>
-            <p>Avaliable geoid and their location:</p>
-            <ul>
-              <li>1:Bronx</li>
-              <li>2:Brooklyn</li>
-              <li>3:Manhattan</li>
-              <li>4:Queens</li>
-              <li>5:Staten Island</li>
-            </ul>
-            <p>Avaliable chartid:</p>
-            <ul>
-              <li>asthma</li>
-              <li>fineparticles</li>
-              <li>nox</li>
-            </ul>
-          </div>
-        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Route</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>/</td>
+              <td>Home Page</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>/about</td>
+              <td>About Page</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>/apidoc</td>
+              <td>API User Manual</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>/get_chart_data/chart?geoid={}&chartid={}</td>
+              <td>Available geoid and their location:
+                <ul>
+                  <li>1:Bronx</li>
+                  <li>2:Brooklyn</li>
+                  <li>3:Manhattan</li>
+                  <li>4:Queens</li>
+                  <li>5:Staten Island</li>
+                </ul>  
+                Available chartid: 
+                <ul>
+                  <li>asthma</li>
+                  <li>fineparticles</li>
+                  <li>nox</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>/api/get_truck_route_data</td>
+              <td>All the available truck route data in json format</td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>/api/jupyter_notebook_analysis</td>
+              <td>Our analysis in jupyter notebook.</td>
+            </tr>
+          </tbody>
+        </table>
+
         <hr>
         <p>Project by Maha Salman Cheema, Rachel Woodill, and Zhao Wen</p>
       </div>

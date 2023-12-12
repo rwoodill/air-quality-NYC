@@ -51,6 +51,16 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <!-- jQuery -->
+      <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <!-- <script>
+      $(function() {
+        $("#example-content").load("/jupyter_notebook_analysis"); 
+      });
+    </script> -->
     <!-- chartjs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- custom css -->
@@ -71,7 +81,7 @@
         <option value="" disabled selected>Select an option</option>
         <option value="option1">Map</option>
         <option value="option2">Charts</option>
-        <option value="option3">Example</option>
+        <option value="option3">Jupyter Notebook</option>
       </select>
       <hr />
       <div class="map-container">
@@ -86,8 +96,9 @@
         </div>
       </div>
       <div class="text-center" id="example-container" style="display: none">
-        <h5>Example Text Here</h5>
-        <div id="example-content"></div>
+        <h5>Jupyter Notebook</h5>
+        <iframe src="/jupyter_notebook_analysis" title="Jupyter Notebook" width="1000" height="1200"></iframe>
+        <div id="example-content" style="display: none"></div>
       </div>
     </div>
 
@@ -99,5 +110,6 @@
     <script src="static/js/config.js"></script>
     <script src="static/js/logic.js"></script>
     <script src="static/js/logic_chart.js"></script>
+    <!-- <script src="static/js/logic_jupyter_notebook.js"></script> -->
   </body>
 </html>

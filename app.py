@@ -52,7 +52,7 @@ def apidoc_route():
 # ---------------------------------------------------------
 @app.route('/jupyter_notebook_analysis', methods=['GET'])
 def get_notebook():
-    return render_template("jupyter.html")
+    return render_template("data_analysis.html")
 # ---------------------------------------------------------
 # likely outdated
 # ---------------------------------------------------------

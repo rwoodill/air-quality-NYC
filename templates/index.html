@@ -56,11 +56,11 @@
     src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
     crossorigin="anonymous"></script>
-    <script>
+    <!-- <script>
       $(function() {
-        $("#example-content").load("/templates/data_analysis.html"); 
+        $("#example-content").load("/jupyter_notebook_analysis"); 
       });
-    </script>
+    </script> -->
     <!-- chartjs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- custom css -->
@@ -96,7 +96,7 @@
       </div>
       <div class="text-center" id="example-container" style="display: none">
         <h5>Jupyter Notebook</h5>
-        
+        <iframe src="/jupyter_notebook_analysis" title="Jupyter Notebook" width="1000" height="1200"></iframe>
         <div id="example-content" style="display: none"></div>
       </div>
     </div>

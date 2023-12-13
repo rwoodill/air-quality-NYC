@@ -19,6 +19,7 @@
 - data (truck routes): static > data > truck_routes > NewYorkCityTruckRoutes_20231205.geojson
 - css file (custom css): static > css > style.css
 - flask app (*RUN THIS TO START THE APP*): app.py
+- presentation files: Project Three.pdf
 
 
 # Requirements
